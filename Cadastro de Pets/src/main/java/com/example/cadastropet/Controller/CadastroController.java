@@ -31,5 +31,10 @@ public class CadastroController {
         return service.getAll();
     }
 
+    @GetMapping("/cadastro/{id}")
+    public ResponseEntity<?> getById(@PathVariable Long id){
+        return service.getById(id);
+    }
+
 
 }

@@ -38,4 +38,11 @@ public class CadastroService {
         }
         return ResponseEntity.ok(pets);
     }
+    public ResponseEntity<?> getById(Long id){
+        var pet = repository.findById(id);
+        if(pet.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("There is no pet with such id");
+        }
+        return ResponseEntity.ok(pet.get());
+    }
 }
