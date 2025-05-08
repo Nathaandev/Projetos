@@ -14,12 +14,17 @@ public class CadastroModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Petid;
+
     private String name;
     private String race;
     private double weight;
     private int age;
+
+    @Transient
     private String city;
+    @Transient
     private String street;
+    @Transient
     private int number;
 
     @Column(name = "endereço")

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 public class CadastroService {
 
@@ -28,5 +30,12 @@ public class CadastroService {
         cadastroModel.setEndereço(endereço);
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(cadastroModel));
         //Returns an HTTP response code 201 (Created) and the ProductModel object saved in the database
+    }
+    public ResponseEntity<List<CadastroModel>> getAll(){
+        List<CadastroModel> pets = repository.findAll();
+        if(pets.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(pets);
     }
 }

@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class CadastroController {
@@ -24,5 +26,10 @@ public class CadastroController {
     public ResponseEntity<CadastroModel> save(@RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
         return service.saveProduct(cadastroRecordDTO);
     }
+    @GetMapping("/cadastro")
+    public ResponseEntity<List<CadastroModel>> getAll(){
+        return service.getAll();
+    }
+
 
 }
