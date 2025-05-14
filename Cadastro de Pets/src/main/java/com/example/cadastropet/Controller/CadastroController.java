@@ -1,4 +1,6 @@
 package com.example.cadastropet.Controller;
+import com.example.cadastropet.Enum.CatOrDog;
+import com.example.cadastropet.Enum.MascOrFem;
 import com.example.cadastropet.Model.CadastroModel;
 import com.example.cadastropet.Repository.CadastroRepository;
 import com.example.cadastropet.Service.CadastroService;
@@ -26,15 +28,34 @@ public class CadastroController {
     public ResponseEntity<CadastroModel> save(@RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
         return service.saveProduct(cadastroRecordDTO);
     }
-    @GetMapping("/cadastro")
+    //Get all
+    @GetMapping("/GetAll")
+
     public ResponseEntity<List<CadastroModel>> getAll(){
         return service.getAll();
     }
-
-    @GetMapping("/cadastro/{id}")
+    //Get by id
+    @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id){
         return service.getById(id);
     }
+    //Get by gender
+    @GetMapping("/GetByGender/{gender}")
+    public ResponseEntity<List<CadastroModel>> getByGender(@PathVariable MascOrFem gender){
+        return service.getByGender(gender);
+    }
+    @GetMapping("/GetByType/{type}")
+    public ResponseEntity<List<CadastroModel>> getByType(@PathVariable CatOrDog type){
+        return service.getByType(type);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> Delete(@PathVariable Long id){
+        return service.Delete(id);
+    }
 
+    @PutMapping("/Update/{id}")
+    public ResponseEntity<Object> Update(@PathVariable("id") Long id, @RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
+        return service.Update(id, cadastroRecordDTO);
+    }
 
 }

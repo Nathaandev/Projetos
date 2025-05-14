@@ -5,18 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf4fc3af-33d3-497c-88f8-6dbee9240e6c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Exceptions/ApiExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Response/ExceptionMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Controller/CadastroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Controller/CadastroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Model/CadastroModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Model/CadastroModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Repository/CadastroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Repository/CadastroRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Service/CadastroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Service/CadastroService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Controller/CadastroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Controller/CadastroController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Model/CadastroModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Model/CadastroModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Repository/CadastroRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Repository/CadastroRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Service/CadastroService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Service/CadastroService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Cadastro de Pets" />
@@ -26,6 +37,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LLMProjectSettings">
+    <option name="turned_on" value="false" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -34,27 +48,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.CadastropetApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/natab/Projetos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CadastropetApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/natab/Projetos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.tailwindcss&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="CadastropetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="cadastropet" />
@@ -82,7 +97,10 @@
       <workItem from="1746144617370" duration="879000" />
       <workItem from="1746150533100" duration="282000" />
       <workItem from="1746150970206" duration="46000" />
-      <workItem from="1746667621665" duration="3167000" />
+      <workItem from="1746667621665" duration="6786000" />
+      <workItem from="1746735812800" duration="5227000" />
+      <workItem from="1747093203420" duration="1790000" />
+      <workItem from="1747174954457" duration="4107000" />
     </task>
     <servers />
   </component>
