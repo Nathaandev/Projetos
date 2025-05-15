@@ -1,6 +1,7 @@
 package com.example.cadastropet.Controller;
 import com.example.cadastropet.Enum.CatOrDog;
 import com.example.cadastropet.Enum.MascOrFem;
+import com.example.cadastropet.Exceptions.AgeHigherThan19;
 import com.example.cadastropet.Model.CadastroModel;
 import com.example.cadastropet.Repository.CadastroRepository;
 import com.example.cadastropet.Service.CadastroService;
@@ -26,6 +27,9 @@ public class CadastroController {
     @PostMapping("/cadastro")
     //Indicates that this method will be executed when the endpoint /products is called with the method HTTP Post
     public ResponseEntity<CadastroModel> save(@RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
+        if (cadastroRecordDTO.age() >= 20) {
+            throw new AgeHigherThan19("The pet can't be older than 19.");
+        }
         return service.saveProduct(cadastroRecordDTO);
     }
     //Get all

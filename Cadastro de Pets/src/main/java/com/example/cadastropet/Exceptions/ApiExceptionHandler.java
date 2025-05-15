@@ -13,12 +13,13 @@ import java.util.Date;
 
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
-    
-    @ExceptionHandler(value=Exception.class)
-    public ResponseEntity<Object> HandleAnyException(Exception e, WebRequest request){
-        String exceptionDescription = e.getLocalizedMessage();
-        ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), exceptionDescription);
-        return new ResponseEntity<>(exceptionMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+
+    @ExceptionHandler(value= AgeHigherThan19.class)
+    public ResponseEntity<Object> AgeHigherThan19(Exception e, WebRequest request){
+        String exception = e.getClass().getSimpleName();
+        String exceptionDescription =e.getLocalizedMessage();
+        ExceptionMessage exceptionMessage = new ExceptionMessage(new Date(), exceptionDescription, exception);
+        return new ResponseEntity<>(exceptionMessage, new HttpHeaders(), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
 
