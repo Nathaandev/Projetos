@@ -12,10 +12,12 @@
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Model/CadastroModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Model/CadastroModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Repository/CadastroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Repository/CadastroRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Service/CadastroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/Service/CadastroService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/dtos/CadastroRecordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/src/main/java/com/example/cadastropet/dtos/CadastroRecordDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Controller/CadastroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Controller/CadastroController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Model/CadastroModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Model/CadastroModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Repository/CadastroRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Repository/CadastroRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Service/CadastroService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/Service/CadastroService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/dtos/CadastroRecordDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cadastro de Pets/target/classes/com/example/cadastropet/dtos/CadastroRecordDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,9 @@
       <workItem from="1747093203420" duration="1790000" />
       <workItem from="1747174954457" duration="4413000" />
       <workItem from="1747213124163" duration="1614000" />
-      <workItem from="1747322980243" duration="3593000" />
+      <workItem from="1747322980243" duration="11718000" />
+      <workItem from="1747411470739" duration="623000" />
+      <workItem from="1747429901454" duration="590000" />
     </task>
     <servers />
   </component>

@@ -14,12 +14,15 @@ public class CadastroModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Petid;
-
-    private String name;
     private String race;
     private double weight;
     private int age;
 
+
+    @Transient
+    private String firstname;
+    @Transient
+    private String lastname;
     @Transient
     private String city;
     @Transient
@@ -27,8 +30,10 @@ public class CadastroModel implements Serializable {
     @Transient
     private int number;
 
-    @Column(name = "endereço")
-    private String endereço;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "address")
+    private String address;
 
     @Enumerated(EnumType.STRING)
     private CatOrDog type;
@@ -76,12 +81,28 @@ public class CadastroModel implements Serializable {
         this.race = race;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public double getWeight() {
