@@ -6,29 +6,26 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+
 @Entity
 @Table(name = "Pets")
 public class CadastroModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Petid;
     private String race;
-    private double weight;
-    private int age;
-
+    private String weight;
+    private String age;
 
     @Transient
     private String firstname;
     @Transient
     private String lastname;
     @Transient
-    private String city;
-    @Transient
-    private String street;
-    @Transient
-    private int number;
+    private String number;
 
     @Column(name = "name")
     private String name;
@@ -40,6 +37,7 @@ public class CadastroModel implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private MascOrFem gender;
+
 
     public CatOrDog getType() {
         return type;
@@ -105,17 +103,27 @@ public class CadastroModel implements Serializable {
         this.lastname = lastname;
     }
 
-    public double getWeight() {
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
-    public int getAge() {
+
+    public String getAge() {
         return age;
     }
-    public void setAge(int age) {
+
+    public void setAge(String age) {
         this.age = age;
     }
 }
