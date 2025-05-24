@@ -66,7 +66,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.tailwindcss",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -106,11 +106,19 @@
       <workItem from="1747411470739" duration="623000" />
       <workItem from="1747429901454" duration="4703000" />
       <workItem from="1747438674502" duration="2483000" />
-      <workItem from="1747677764811" duration="6209000" />
+      <workItem from="1747677764811" duration="7747000" />
+      <workItem from="1747781188177" duration="635000" />
+      <workItem from="1747867292424" duration="7507000" />
+      <workItem from="1747951613426" duration="2128000" />
+      <workItem from="1748030514499" duration="17738000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

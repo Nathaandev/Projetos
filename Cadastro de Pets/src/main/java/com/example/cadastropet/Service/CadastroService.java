@@ -20,29 +20,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CadastroService {
-
+    CadastroModel cadastroModel;
     static final String VALUE_NOT_INFORMED = "NOT INFORMED";
     @Autowired
     CadastroRepository repository;
-
     ExceptionsCheck exceptionsCheck = new ExceptionsCheck();
 
     public ResponseEntity<CadastroModel> saveProduct(@RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
         var cadastroModel = new CadastroModel();
         BeanUtils.copyProperties(cadastroRecordDTO, cadastroModel);
         if (cadastroModel.getRace().trim().isEmpty()){ cadastroModel.setRace(VALUE_NOT_INFORMED);}
-        if (cadastroModel.getNumber().trim().isEmpty()){ cadastroModel.setNumber(VALUE_NOT_INFORMED);}
+        if (cadastroRecordDTO.number().trim().isEmpty()){ cadastroModel.setNumber(VALUE_NOT_INFORMED);}
         if (cadastroModel.getWeight().trim().isEmpty()){ cadastroModel.setWeight(VALUE_NOT_INFORMED);}
         if (cadastroModel.getAge().trim().isEmpty()){ cadastroModel.setAge(VALUE_NOT_INFORMED);}
 
         exceptionsCheck.CheckExceptionsSave(cadastroRecordDTO, cadastroModel);
-        cadastroModel.setAddress(cadastroRecordDTO.street() + ", " + cadastroModel.getNumber() + " - " + cadastroRecordDTO.city());
-        String name = cadastroRecordDTO.firstname() + " " + cadastroRecordDTO.lastname();
+        cadastroModel.setAddress(cadastroRecordDTO.street() + ", " + cadastroRecordDTO.number() + " - " + cadastroRecordDTO.city());
+        String name = cadastroModel.getFirstname() + " " + cadastroModel.getLastname();
         cadastroModel.setName(name);
+        cadastroModel.setFirstname(cadastroModel.getFirstname());
+        cadastroModel.setLastname(cadastroModel.getLastname());
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(cadastroModel));
 
     }
@@ -73,13 +76,12 @@ public class CadastroService {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } return ResponseEntity.ok(pets);
     }
-    public ResponseEntity<?> Delete(Long id){
+    public ResponseEntity<Object> DeleteById(Long id){
         var pet = repository.findById(id);
-        if(pet.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("There is no pet with such id");
-        }
-        repository.deleteById(id);
-        return ResponseEntity.status(HttpStatus.OK).body("Content deleted successfully.");
+        if (pet.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        } repository.deleteById(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Content deleted successfully");
     }
     public ResponseEntity<Object> Update(@PathVariable("id") Long id, @RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
         Optional<CadastroModel> pet = repository.findById(id);
@@ -89,5 +91,52 @@ public class CadastroService {
         var atualizar = pet.get();
         BeanUtils.copyProperties(cadastroRecordDTO, atualizar);
         return ResponseEntity.status(HttpStatus.OK).body(repository.save(atualizar));
+    }
+
+    public ResponseEntity<List<CadastroModel>> GetPets(Long id, String firstname, String lastname, String address, String weight, String age, String gender, String type, String race){
+        int active_filters = 0;
+        List<CadastroModel> pets = repository.findAll();
+        List<CadastroModel> filters = pets.stream()
+                .filter(p -> id == null || p.getPetid().equals(id))
+                .filter(p -> firstname == null || (p.getName() != null && p.getName().toLowerCase().contains(firstname.toLowerCase())))
+                .filter(p -> lastname == null || (p.getName() != null && p.getName().toLowerCase().contains(lastname.toLowerCase())))
+                .filter(p -> address == null || p.getAddress().equalsIgnoreCase(address))
+                .filter(p -> weight == null || p.getWeight().equalsIgnoreCase(weight))
+                .filter(p -> age == null || p.getAge().equalsIgnoreCase(age))
+                .filter(p -> gender == null || p.getGender().name().equalsIgnoreCase(gender))
+                .filter(p -> type == null || p.getType().name().equalsIgnoreCase(type))
+                .filter(p -> race == null || p.getRace().equalsIgnoreCase(race))
+
+                .collect(Collectors.toList());
+        if(id != null){
+            active_filters++;
+        }
+        if(firstname != null){
+            active_filters++;
+        }
+        if(lastname != null){
+            active_filters++;
+        }
+        if(address != null){
+            active_filters++;
+        }
+        if(weight != null && !Objects.equals(weight, VALUE_NOT_INFORMED)){
+            active_filters++;
+        }
+        if(age != null && !Objects.equals(age, VALUE_NOT_INFORMED)){
+            active_filters++;
+        }
+        if(gender != null){
+            active_filters++;
+        }
+        if(type != null){
+            active_filters++;
+        }
+        if (race != null && !Objects.equals(race, VALUE_NOT_INFORMED)) {
+            active_filters++;
+        }
+        exceptionsCheck.CheckExceptionsGet(active_filters);
+        return ResponseEntity.ok(filters);
+
     }
 }

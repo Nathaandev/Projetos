@@ -12,4 +12,5 @@ import java.util.List;
 public interface CadastroRepository extends JpaRepository<CadastroModel, Long> {
     List<CadastroModel> findByGender(MascOrFem gender);
     List<CadastroModel> findByType(CatOrDog type);
+    List<CadastroModel> findByTypeAndGender(CatOrDog type, MascOrFem gender);
 }

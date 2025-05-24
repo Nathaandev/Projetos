@@ -21,8 +21,12 @@ import java.util.List;
 @RequestMapping("/api")
 public class CadastroController {
 
+
     @Autowired
     CadastroService service;
+    @Autowired
+    private CadastroService cadastroService;
+    CadastroRecordDTO dto;
 
     //Indicates to SpringBoot that this method will receive a POST request
     @PostMapping("/cadastro")
@@ -32,32 +36,32 @@ public class CadastroController {
     }
     //Get all
     @GetMapping("/GetAll")
-
     public ResponseEntity<List<CadastroModel>> getAll(){
         return service.getAll();
     }
-    //Get by id
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable Long id){
-        return service.getById(id);
-    }
-    //Get by gender
-    @GetMapping("/GetByGender/{gender}")
-    public ResponseEntity<List<CadastroModel>> getByGender(@PathVariable MascOrFem gender){
-        return service.getByGender(gender);
-    }
-    @GetMapping("/GetByType/{type}")
-    public ResponseEntity<List<CadastroModel>> getByType(@PathVariable CatOrDog type){
-        return service.getByType(type);
-    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> Delete(@PathVariable Long id){
-        return service.Delete(id);
+        return service.DeleteById(id);
     }
 
     @PutMapping("/Update/{id}")
     public ResponseEntity<Object> Update(@PathVariable("id") Long id, @RequestBody @Valid CadastroRecordDTO cadastroRecordDTO){
         return service.Update(id, cadastroRecordDTO);
     }
+    @GetMapping("/pets")
+    public ResponseEntity<List<CadastroModel>> getPets(
+            @RequestParam(required = false) Long id,
+            @RequestParam(required = false) String firstname,
+            @RequestParam(required = false) String lastname,
+            @RequestParam(required = false) String address,
+            @RequestParam(required = false) String weight,
+            @RequestParam(required = false) String age,
+            @RequestParam(required = false) String gender,
+            @RequestParam(required = false) String type,
+            @RequestParam(required = false) String race
 
+    ) {
+        return cadastroService.GetPets(id, firstname, lastname ,address, weight, age, gender, type, race);
+    }
 }

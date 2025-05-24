@@ -4,6 +4,8 @@ import com.example.cadastropet.Service.CadastroService;
 import com.example.cadastropet.dtos.CadastroRecordDTO;
 
 public class ExceptionsCheck {
+    static final int MAX_FILTER_QUANTITY = 2;
+    CadastroService cadastroService;
     public ExceptionsCheck() {
     }
     public void CheckExceptionsSave(CadastroRecordDTO cadastroRecordDTO, CadastroModel cadastroModel){
@@ -27,5 +29,11 @@ public class ExceptionsCheck {
             throw new IllegalArgumentException("The race can't have numbers or special characters");
         }
         if (!cadastroRecordDTO.number().matches("[0-9 ]*")){throw new IllegalArgumentException("This field can't have letters or special characters");}
+        if(!cadastroRecordDTO.city().matches("[\\p{L} ]*")){throw new IllegalArgumentException("This field can't have numbers or special characters");}
+    }
+    public void CheckExceptionsGet(int active_filters){
+        if(active_filters > MAX_FILTER_QUANTITY){
+            throw new FilterMaxQuantityException("You can only have up to 2 filters active at the same time.");
+        }
     }
 }

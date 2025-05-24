@@ -103,14 +103,6 @@ public class CadastroModel implements Serializable {
         this.lastname = lastname;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
     public String getWeight() {
         return weight;
     }
@@ -126,4 +118,9 @@ public class CadastroModel implements Serializable {
     public void setAge(String age) {
         this.age = age;
     }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
 }
